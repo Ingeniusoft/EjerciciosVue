@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Componentes</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" 
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+    crossorigin="anonymous">
+</head>
+<body>
+
+    <div id="app">
+       <!--<h1 style="container: 50%; text-align: center;">{{titulo}}</h1>-->
+        <br><br>
+        <saludo></saludo>
+    </div>
+
+<!--*********************************************************************************************************-->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    
+<!--Con las comillas invertidas podemos escribir codigo HTML sin importar dar enter y siempre que se utilice 
+    "template" siempre debemos de envolver todo dentro de un contenedor (un div puede ser una opcion)-->
+
+    <script> /*En la parte de "template: //html" solo estoy haciendo uso de una extension, en caso de no 
+    tenerla (es6-string-html) dara error al ejecutar este codigo*/
+        Vue.component('saludo',{
+            template: //html
+            `
+            <div>
+                <h1 style="container: 50%; text-align: center;">{{alerta}}</h1>
+                <p class="container mt-3">Los componentes son instancias reutilizables de Vue con un nombre. 
+                    Podemos usar este componente como un elemento personalizado dentro 
+                        de una instancia de Vue raíz creada con new Vue:</p>
+            </div>
+            `,
+            
+            data(){
+                return {
+                    alerta:'Estas muy lento...'
+                }
+            }
+        });
+
+        new Vue({
+            el:'#app',
+            data:{
+                saludo:'Componentes de Vue'
+            }
+        })
+    </script>
+
+    <script src="https://kit.fontawesome.com/3eff59dd2e.js" crossorigin="anonymous"></script>
+    <script src="../Componentes/componentes.js"></script>
+</body>
+</html>

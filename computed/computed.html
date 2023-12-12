@@ -21,14 +21,13 @@
             <button class="btn btn-primary" @click="contador++">+</button>
             <button class="btn btn-danger" @click="contador--">-</button>
             <h3>{{contador}}</h3>
+        </div>
+        <br><br><br><br>
 
-            <div class="progress" role="progressbar" aria-label="Success example" aria-valuenow="25" 
-                aria-valuemin="0" aria-valuemax="100"
-                :class="color"
-                >
-                <div class="progress-bar" 
-                :style="{'width': contador + '%'}">{{contador}}%</div>
-            </div>
+        <div class="progress">
+            <div class="progress-bar" role="progressbar" aria-valuenow="25" 
+            aria-valuemin="0" aria-valuemax="100" :class="color" :style="{'width': contador + '%'}" >
+        {{contador}}%</div>
         </div>
     </div>
 
