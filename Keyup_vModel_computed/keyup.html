@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<h1>Hola mundo</h1>
+    <div id="app">
+
+        <label for="">Colaborador</label>
+        <input type="text" name="colaborador" id="colaborador" v-model="ColaboradorNuevo" @keyup.enter="agregarColaborador">
+        <button @click="agregarColaborador">Agregar Colaborador</button>
+
+        <ul>
+            <li v-for="colaborador of Colaboradores">
+                <input type="text" v-model.number="colaborador.Cuenta">
+                {{colaborador.Nombre}} {{colaborador.Apellido}}
+                <button @click="colaborador.Cuenta = colaborador.Cuenta + 1">+</button>
+                <span v-if="colaborador.Cuenta === 450" style="color: red; font-weight: bold;">Lo encontre</span>
+                    <span v-else="">No lo encontre</span>
+            </li>
+        </ul>
+        <h4>Total: {{sumarCuenta}}</h4>
+    </div>
+
+    <!-- versión de desarrollo, incluye advertencias de ayuda en la consola -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="../Keyup_vModel_computed/keyup.js"></script>
+
+</body>
+</html>

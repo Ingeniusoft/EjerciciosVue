@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" 
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+    crossorigin="anonymous">
+</head>
+<body>
+    <div class="container mt-5" id="app">
+
+        <h1>{{titulo}}</h1>
+        <input type="text" class="form-control my-3" name="" id="" v-model="nuevaTarea" 
+        @keyup.enter="agregarTarea">
+        <button type="submit" class="btn btn-primary" @click="agregarTarea">Agregar</button>
+
+        <div class="container mt-3" v-for="(item, index) of tareas">
+            <div role="alert" 
+            :class="['alert', item.Estado ? 'alert-success' : 'alert-danger']">
+                <div class="d-flex justify-content-between">
+                    <div>
+                        {{index}} - {{item.Nombre}} - {{item.Estado}}
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-circle-check mr-3" style="color: green;" 
+                        @click="editarTarea(index)"></i>
+                        <i style="color: red;" class="fa-solid fa-trash" @click="eliminar(index)"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+
+
+
+    <script src="https://kit.fontawesome.com/3eff59dd2e.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="/miCRUDvue/miCRUDvue.js"></script>
+</body>
+</html>

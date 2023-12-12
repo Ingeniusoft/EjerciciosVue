@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<h1>Hola mundo</h1>
+    <div id="app">
+        <label >Introduce un dato</label>
+        <input type="text" v-model="Usuarios2">
+        <button @click="agregarUsuario">Agregar</button>
+        <br>
+        <ul>
+            <li v-for="Usuario of Usuarios">
+                {{Usuario.Nombre}} - {{Usuario.Edad}}
+                <span v-if="Usuario.Edad %2 == 0" style="color: red;">Edad Par</span>
+                    <span v-else="">Edad Impar</span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- versión de desarrollo, incluye advertencias de ayuda en la consola -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="../v-for_if_model/Index.js"></script>
+
+</body>
+</html>
